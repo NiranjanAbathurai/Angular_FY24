@@ -1,0 +1,54 @@
+<nav class=" row navbar navbar-expand-lg navbar-light bg-light">
+    <div class="col-4">
+        <img src="../assets/niranjan_logo.png" width="100" height="75" class=" imageClass d-inline-block align-top" id="logoImage">
+        <h1 style="font-size: x-large;" class="navbar-brand" id="nameHeader">Niranjan Abathurai</h1>
+        <h5 class="hide">niranjanhari464@gmail.com</h5>
+    </div>
+   <div class="col-8">
+   <!-- Example split danger button -->
+        <div class="btn-group" *ngIf="loggedInDetails" id="testHeaderDiv">
+            <button  type="button" class="nav-item navItems aTag" data-bs-toggle="dropdown" 
+                    id = "dropdownButton" aria-expanded="false" style="padding: 30% 20px 30% 20px !important;margin-top: -5px!important;">Action</button>
+
+            <ul class="dropdown-menu">
+            <li *ngIf="loggedInDetails" (click) ="navActiveBarClick('Skills')">
+                <a class="dropdown-item" routerLink="angular" routerLinkActive="active">Angular</a></li>
+            <li *ngIf="loggedInDetails" (click) ="navActiveBarClick('Education')">
+                <a class="dropdown-item" routerLink="javascript" routerLinkActive="active">Javascript</a></li>
+            <li *ngIf="loggedInDetails" (click) ="navActiveBarClick('About')">
+                <a class="dropdown-item" routerLink="about" routerLinkActive="active">About</a></li>
+            <li *ngIf="loggedInDetails" (click) ="navActiveBarClick('Logout')">
+                <a class="dropdown-item" routerLink="login" routerLinkActive="active">Log out</a></li>
+            </ul>
+        
+        </div>
+
+  
+
+    <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" 
+            aria-haspopup="true" aria-expanded="false">
+        Menu
+      </button> -->
+    <ul class="nav justify-content-end navClass" id="navBarItems" style="margin-top: -25px!important;">
+      <!-- <li *ngFor ="let item of navbar_heading;let index = index" class="nav-item navItems" id="index" (click) ="navActiveBarClick(index)">
+       {{item}}
+      </li>  -->
+      <!-- style="padding-left: 0px!important;padding-right: 40px!important;" -->
+      <li *ngIf="loggedInDetails" class="nav-item navItems" (click) ="navActiveBarClick('Skills')" id="nav0" > 
+        <a class="aTag" routerLink="angular" routerLinkActive="active">Angular</a>
+      </li>
+      <li *ngIf="loggedInDetails" class="nav-item navItems" (click) ="navActiveBarClick('Education')" id="nav1" > 
+        <a class="aTag" routerLink="javascript" routerLinkActive="active">Javascript</a>
+      </li>
+      <li *ngIf="loggedInDetails" class="nav-item navItems" (click) ="navActiveBarClick('About')" id="nav2" > 
+        <a class="aTag" routerLink="about" routerLinkActive="active">About</a>
+      </li>
+      <li *ngIf="!loggedInDetails" class="nav-item navItems" (click) ="navActiveBarClick('Login')" id="nav3" style="padding-bottom: 35px !important;margin-top: 20px;"> 
+        <a class="aTag" routerLink="login" routerLinkActive="active">Login</a>
+      </li>
+      <li *ngIf="loggedInDetails" class="nav-item navItems" (click) ="navActiveBarClick('Logout')" id="nav4" > 
+        <a class="aTag" routerLink="login" routerLinkActive="active">Log out</a>
+      </li>
+    </ul>
+    </div>
+</nav>

@@ -1,0 +1,33 @@
+<p>{{rowData}}</p>
+
+<div class="col-lg-12" style="margin-bottom: 3%;padding: 2%">
+    <button class="btn btn-warning" style="margin-right: 2%" (click)="getSelected()">Get Selected rows</button>
+    <button class="btn btn-danger"  (click)="clearSelection1()">Clear Selection</button>
+  </div>
+
+  <ag-grid-angular
+    style="width: 100%; height: 30%"
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowData]="testData"
+    [rowSelection]="'multiple'"
+    [animateRows]="true"
+    (cellClicked)="onCellClicked($event)"
+    id="loadGrid"
+    onscroll="myFunction()"
+    (scroll)="loadDataonGrid($event)" 
+  ></ag-grid-angular>
+  <button class="btn btn-info" (click)="testLoadMore()">Load more</button>
+
+<!-- AG Grid Angular Component  (gridReady)="onGridReady($event)" -->
+<ag-grid-angular
+    style="width: 100%; height: 100%"
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowData]="rowData$ | async"
+    [rowSelection]="'multiple'"
+    [animateRows]="true"
+    (cellClicked)="onCellClicked($event)"
+  ></ag-grid-angular>

@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- TEMPLATE DRIVEN FORM -->
+<div class=" loginForm">
+    <form class="loginFormBox" #loginform="ngForm" (ngSubmit)="onSubmit(loginform)">
+        <div class="form-label formHeader">Login</div>
+        <div class="col-md-12 form-group">
+            <label for="userName" class="col-md-12 insideForm">First Name or Email ID</label>
+            <input class="col-md-12 text insideForm" type="text" id="userName" [(ngModel)]="loginFormDetails.userName"
+                name="userName" #userName="ngModel" required maxlength="12" pattern=".{6,12}">
+            <div [hidden]="userName.valid || userName.pristine " class="alertError"> Name is required</div>
+        </div>
+        <div class="col-md-12 form-group">
+            <label for="password" class="col-md-12 insideForm">Password</label>
+            <input class="text col-md-12 insideForm" type="password" id="password" [(ngModel)]="loginFormDetails.password"
+                name="password" #password="ngModel" required maxlength="12"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^*]).{8,12}">
+            <div [hidden]="(password.valid || password.pristine )" class="alertError"> Your username or password is
+                incorrect</div>
+        </div>
+        <div class="loginBtn">
+            <button type="submit" style="width: 30%;" [disabled]="!loginform.form.valid"
+                class="btn btn-success">Login</button>
+        </div>
+        <div [hidden]="userPresent" class="alertError loginCls"> UserName or password is wrong</div>
+        <div [hidden]="!loggedIn" class="alertError loginCls"> Logged In</div>
+        <a class="loginCls signUpClass" routerLink="/signup" routerLinkActive="active"> Create an account </a>
+    </form>
+
+</div>
+
+<!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  For email validation in order [A-Z]{1,8}[0-9]{1,8}[._%+-]{1,4}$ -->  

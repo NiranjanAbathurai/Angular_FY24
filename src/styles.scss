@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+
+//Form classes start  --!
+
+.loginForm{
+    padding: 14% 0 0 35%;
+  }
+  
+  .loginFormBox{
+    width: 50%;
+    padding: 5%;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    top: 25%;
+    left: 25%;
+    position: absolute;
+    height: 520px;
+  }
+  
+  .insideForm{
+    margin: 2% 0 2% 0;
+    padding: 1%;
+  }
+  
+  input{
+    border-radius: 5px;
+    border: 1px solid grey;
+  }
+  
+  .formHeader{
+    margin-left: -12.5%;
+    width: 125%;
+    padding: 3% 0 3% 10%;
+    margin-top: -12.5%;
+    background-color: #e0e0e0;
+    font-size: x-large;
+  }
+  
+  .loginBtn{
+    margin: 7.5% 0 0% 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .alertError{
+    font-size: small;
+    color: red;
+  }
+  
+  // Form classes ends --!
+
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+html, body {
+  height: 100%;
+  width: 100%;
+ // padding: 5px;
+  // box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

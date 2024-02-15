@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- REACTIVE DRIVEN FORM -->
+<div class="row loginForm" style="padding-top: 1% !important;">
+    <form class="loginFormBox" [formGroup]="signUpDetails" (ngSubmit)="onSubmitForm()">
+        <div class="form-label formHeader">Sign Up</div>
+        <div class="col-md-12 form-group">
+            <label for="userName" class="col-md-12 insideForm">User Name </label>
+            <input class="col-md-12 text insideForm" type="text" id="userName" formControlName="userName">
+            <div class="alertError" *ngIf="!signUpForm.userName.errors?.['required'] && (signUpForm.userName.errors?.['minlength'] || signUpForm.userName.errors?.['maxlength'])" >
+                 8-12 characters are required</div>
+        </div>
+        <div class="col-md-12 form-group">
+            <label for="emailId" class="col-md-12 insideForm">Email Id </label>
+            <input class="col-md-12 text insideForm" type="email" id="emailId" formControlName="emailId">
+            <div class="alertError" *ngIf="!signUpForm.emailId.errors?.['required'] && signUpForm.emailId.errors?.['pattern']" >
+                Email Id is required is required</div>
+        </div>
+        <div class="col-md-12 form-group">
+            <label for="password" class="col-md-12 insideForm">Password </label>
+            <input class="col-md-12 text insideForm" type="text" id="password" formControlName="password">
+            <div class="alertError" *ngIf="!signUpForm.password.errors?.['required'] && (signUpForm.password.errors?.['minlength'] || signUpForm.password.errors?.['maxlength'])" >
+                8-12 characters are  required</div>
+            <div class="alertError" *ngIf="!signUpForm.password.errors?.['required'] && signUpForm.password.errors?.['capitalLetter'] " >
+                Minimum 1 capital alphabet required</div>
+            <div class="alertError" *ngIf="!signUpForm.password.errors?.['required'] && signUpForm.password.errors?.['smallLetter'] " >
+                Minimum 1 small alphabet required</div>
+            <div class="alertError" *ngIf="!signUpForm.password.errors?.['required'] && signUpForm.password.errors?.['numberChar'] " >
+                Minimum 1 numerical character required</div>
+            <div class="alertError" *ngIf="!signUpForm.password.errors?.['required'] && signUpForm.password.errors?.['symbolChar'] " >
+                Minimum 1 symbol is required</div>
+        </div>
+        <div class="col-md-12 form-group">
+            <label for="confirmPassword" class="col-md-12 insideForm">Confirm Password </label>
+            <input class="col-md-12 text insideForm" type="text" id="confirmPassword" formControlName="confirmPassword" (blur)="onBlur()" (keyup)="onKeyUp($event)">
+            <div class="alertError" *ngIf="!signUpForm.confirmPassword.errors?.['required'] && this.signUpForm.password.value !== this.signUpForm.confirmPassword.value" >
+                Password did not match</div>
+        </div>
+        <div class="col-md-12 form-group">
+            <label for="acceptTerms">
+            <input type="checkbox" id="acceptTerms" formControlName="acceptTerms">
+            <span class="acceptText">I accept the terms and conditions</span> </label>
+        </div>
+        <div class="loginBtn">
+            <button type="submit" [disabled]="!signUpDetails.valid || !this.signUpForm.acceptTerms.value" 
+            style="width: 30%;" class="btn btn-success">Sign Up</button>
+        </div>
+    </form>
+</div>
