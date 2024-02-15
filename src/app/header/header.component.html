@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="../assets/niranjan_logo.png" width="100" height="75" class="d-inline-block align-top" id="logoImage">
+    <h1 style="font-size: x-large;" class="navbar-brand" id="nameHeader">Niranjan Abathurai</h1>
+    <h5 class="hide">niranjanhari464@gmail.com</h5>
+    <ul class="nav justify-content-end navClass">
+      <!-- <li *ngFor ="let item of navbar_heading;let index = index" class="nav-item navItems" id="index" (click) ="navActiveBarClick(index)">
+       {{item}}
+      </li>  -->
+      <!-- style="padding-left: 0px!important;padding-right: 40px!important;" -->
+      <li *ngIf="loggedInDetails" class="nav-item navItems" (click) ="navActiveBarClick('Skills')" id="nav0" style="padding-left: 0px!important;padding-right: 0px !important;"> 
+        <a class="aTag" routerLink="angular" routerLinkActive="active">Angular</a>
+      </li>
+      <li *ngIf="loggedInDetails" class="nav-item navItems" (click) ="navActiveBarClick('Education')" id="nav1" style="padding-left: 0px!important;padding-right: 0px !important;"> 
+        <a class="aTag" routerLink="javascript" routerLinkActive="active">Javascript</a>
+      </li>
+      <li *ngIf="loggedInDetails" class="nav-item navItems" (click) ="navActiveBarClick('About')" id="nav2" style="padding-left: 0px!important;padding-right: 0px !important;"> 
+        <a class="aTag" routerLink="about" routerLinkActive="active">About</a>
+      </li>
+      <li *ngIf="!loggedInDetails" class="nav-item navItems" (click) ="navActiveBarClick('Login')" id="nav3" style="padding: 35px 0 35px 0!important;"> 
+        <a class="aTag" routerLink="login" routerLinkActive="active">Login</a>
+      </li>
+      <li *ngIf="loggedInDetails" class="nav-item navItems" (click) ="navActiveBarClick('Logout')" id="nav3" style="padding-left: 0px!important;padding-right: 0px !important;"> 
+        <a class="aTag" routerLink="login" routerLinkActive="active">Log out</a>
+      </li>
+    </ul>
+</nav>

@@ -1,0 +1,70 @@
+  //Name header
+  #nameHeader{
+    transition: 0.5s all ease;
+  }
+  
+  #nameHeader:hover{
+      transition: 0.5s all ease;
+      width: 100px;
+      letter-spacing: 8px;
+      color:black;
+      text-shadow: 0 0 5px #03f447, 0 0 25px #03f447, 0 0 50px #03f447, 0 0 100px #03f447;
+  }
+  
+  #nameHeader:hover + .hide{
+    color: black;
+    text-shadow: 0 0 5px #03f447, 0 0 25px #03f447, 0 0 50px #03f447, 0 0 100px #03f447;
+    left: -6.5%;
+    transition: 0.5s all ease;
+  }
+  
+  .hide{
+    font-size:medium;
+    letter-spacing: 1px;
+    color: #e0e0e0;
+    left: -50%;
+    margin-top: 2.5%;
+    position: relative;
+  }
+
+  nav{
+    background-color: #e0e0e0 !important;
+  }
+
+
+  .navClass{
+    position: absolute;
+    right: 1%;
+  }
+
+  .navItems{
+    cursor: pointer;
+    font-size: large;
+    padding: 8.5% 20px 8.5% 20px;
+    display: inline-block;
+  }
+
+  #nav0:hover, #nav1:hover, #nav2:hover, #nav3:hover, #nav4:hover{
+    box-shadow: 0px 10px 10px 0px rgb(48, 48, 48);
+    transition: 0.5s all ease;
+    background-color: black;
+    color: white!important;
+  }
+
+  #logoImage:hover{
+    border-radius: 70%;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100%{transform: translateY(0);}
+    40%{transform: translateY(-40px);}
+    60%{transform: translateY(-15px);}
+}
+
+.aTag{
+  text-decoration: none;
+  color: inherit;
+  padding: 40% 20px 40% 20px;
+}
+

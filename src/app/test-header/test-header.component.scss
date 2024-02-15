@@ -1,0 +1,108 @@
+nav{
+    background-color: #e0e0e0 !important;
+  }
+
+.imageClass{
+    position: fixed;
+    top:1%
+}
+
+#logoImage:hover{
+    border-radius: 70%;
+    animation: bounce 2s infinite;
+    top:1%
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100%{transform: translateY(0);}
+    40%{transform: translateY(-40px);}
+    60%{transform: translateY(-15px);}
+  }   
+
+#nameHeader{
+    position: fixed;
+    left: 90px;
+    top:3%
+}
+
+  //Name header
+  #nameHeader{
+    transition: 0.5s all ease;
+  }
+  
+  #nameHeader:hover{
+      transition: 0.5s all ease;
+      width: 100px;
+      letter-spacing: 8px;
+      color:black;
+      text-shadow: 0 0 5px #03f447, 0 0 25px #03f447, 0 0 50px #03f447, 0 0 100px #03f447;
+  }
+  
+  #nameHeader:hover + .hide{
+    color: black;
+    display: inline;
+    text-shadow: 0 0 5px #03f447, 0 0 25px #03f447, 0 0 50px #03f447, 0 0 100px #03f447;
+    left: 90px;
+    transition: 0.5s all ease;
+  }
+
+  //mail id
+  .hide{
+    position: fixed;
+    left: 50px;
+    top: 8%;
+    display: none;
+  }
+
+  
+  .navItems{
+    cursor: pointer;
+    font-size: large;
+    padding: 8.5% 20px 8.5% 20px;
+    display: inline-block;
+    padding: 30px 0 35px 0!important;
+  }
+
+  .aTag{
+    text-decoration: none;
+    color: inherit;
+    padding: 30% 20px 30% 20px!important;
+    margin-top: -25px !important;
+  }
+
+  #nav3,#nav1,#nav2,#nav4,#nav0{
+    position: relative;
+    right: 2% !important;
+  }
+
+  #nav0:hover, #nav1:hover, #nav2:hover, #nav3:hover, #nav4:hover, #dropdownButton:hover{
+    box-shadow: 0px 10px 10px 0px rgb(48, 48, 48);
+    transition: 0.5s all ease;
+    background-color: black!important;
+    color: white!important;
+  }
+
+  #dropdownButton{
+    text-decoration: none;
+    color: inherit;
+    padding: 40% 20px 40% 20px;
+    border: none;
+    background-color: transparent;
+    display: none;
+  }
+
+  @media screen and (max-width:1000px) {
+    #dropdownButton{
+        display: inline;
+        float: right;
+    }
+    #nav0, #nav1, #nav2, #nav4{
+        display: none;
+    }
+    #testHeaderDiv{
+        float: right;
+        right: 20px;
+    }
+
+
+  }

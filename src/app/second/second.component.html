@@ -1,0 +1,20 @@
+
+<input class="form-control example-full-width marginClass" type="text" [(ngModel)]="pipeValue">
+
+<p class="marginClass">Upper case pipe - {{pipeValue | uppercase}}</p>
+
+<input class="form-control example-full-width marginClass" type="number" [(ngModel)]="value">
+
+<p class="marginClass" >Percent pipe - {{value |  percent: '0.0-2'}}</p>
+
+<input class="form-control example-full-width marginClass" type="number" [(ngModel)]="currencyVal">
+
+<p class="marginClass" >Currency pipe - {{currencyVal |  currency: 'INR'}}</p>
+
+<input class="form-control example-full-width marginClass" type="number" [(ngModel)]="purePipeValue">
+
+<p class="marginClass" >Pure pipe - {{purePipeValue | testPipe}}</p>
+
+<input class="form-control example-full-width marginClass" type="text" [(ngModel)]="impurePipeValue">
+
+<p class="marginClass" >Impure pipe - {{impurePipeValue | testimpurePipe}}</p>
